@@ -6,42 +6,59 @@ class gameTest{
     fun spinDrum_test1(){
         val g = game()
         val a = 1
-        val res = g.spinDrum(a)
-        assertEquals(100, res)
+        g.spinDrum(a)
+        assertEquals(100, g.point)
     }
     @Test
     fun spinDrum_test2(){
         val g = game()
         val a = 2
-        val res = g.spinDrum(a)
-        assertEquals(200, res)
+        g.spinDrum(a)
+        assertEquals(200, g.point)
     }
     @Test
     fun spinDrum_test3(){
         val g = game()
         val a = 3
-        val res = g.spinDrum(a)
-        assertEquals(300, res)
+        g.spinDrum(a)
+        assertEquals(300, g.point)
     }
     @Test
     fun spinDrum_test4(){
         val g = game()
         val a = 4
-        val res = g.spinDrum(a)
-        assertEquals(400, res)
+        g.spinDrum(a)
+        assertEquals(400, g.point)
     }
     @Test
     fun spinDrum_test5(){
         val g = game()
         val a = 5
-        val res = g.spinDrum(a)
-        assertEquals(500, res)
+        g.spinDrum(a)
+        assertEquals(500, g.point)
     }
     @Test
-    fun spinDrum_test6(){
+    fun openLetters_test1(){
         val g = game()
-        val a = 6
-        val res = g.spinDrum(a)
-        assertEquals(600, res)
+        val q = g.questionList[1]
+        val letter = 'к'
+        g.openLetters(q!!, letter)
+        assertEquals("к##", q.qCipher)
+    }
+    @Test
+    fun openLetters_test2(){
+        val g = game()
+        val q = g.questionList[1]
+        val letter = 'о'
+        g.openLetters(q!!, letter)
+        assertEquals("#о#", q.qCipher)
+    }
+    @Test
+    fun openLetters_test3(){
+        val g = game()
+        val q = g.questionList[1]
+        val letter = 'т'
+        g.openLetters(q!!, letter)
+        assertEquals("##т", q.qCipher)
     }
 }
